@@ -1,0 +1,94 @@
+<div class="header py-7 py-lg-8">
+  <div class="container">
+    <div class="header-body text-center mb-7">
+     
+    </div>
+  </div>
+</div>
+<div class="container mt--8 pb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-md-7">
+      <div class="card  shadow border-0" style="background-color: rgb(235, 230, 230, 1%); margin-top:3rem">
+        <p></p>
+        <div class="card-body px-lg-5 py-lg-5" >
+          <form role="form" [formGroup]="angForm" method="post" (ngSubmit)="postdata(angForm.value)" >
+            <div class="form-group mb-3">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                </div>
+                <input class="form-control input-sm" placeholder="username" type="text" name="username" id="username" formControlName="username">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                </div>
+                <input class="form-control input-sm" placeholder="Password" type="password" name="password" id="password" formControlName="password">
+              </div> 
+              <p></p>
+              <div class="container">
+                <a href="javascript:void(0)"  (click)="show()" class="text-light"><small style=" color: #212529;">Mot de passe oublié?</small></a>   
+              </div>
+              <!-- Creates the bootstrap modal where the image will appear -->
+              <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Formulaire de contact</h4>
+                  </div>
+                
+                    <div class="card-body" style="background-color: #f7f7f7;">
+                            <form  (ngSubmit)="onSubmit(mailForm)" #mailForm="ngForm">
+                            
+                <div class="pl-lg-4">
+                              <div class="row">
+                                <div class="col-lg-6">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-username">Nom</label>
+                                <input type="text" id="name" name="name" class="form-control form-control-alternative" placeholder="Nom"  ngModel required #name="ngModel">
+                               
+                              </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Email</label>
+                                    <input type="text" id="email" name="email" class="form-control form-control-alternative" placeholder="Email"  ngModel required #email="ngModel" >
+                                    
+                                  </div>
+                                    </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-lg-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Message</label>
+                                    <textarea  id="messages" name="messages" class="form-control form-control-alternative" placeholder="message" ngModel required #messages="ngModel"></textarea>
+                                    
+                                  </div>
+                                    </div>
+                                    </div>
+                </div>
+                <hr class="my-4" />
+                <div class="modal-footer">
+                 
+                              <button class="btn btn-success my-4" class="btn btn-dark" >Sauvegarder</button>
+                              <a type="button" class="btn btn-dark" data-dismiss="modal" (click) = "hide()">Close</a>
+                           </div>
+                            </form>
+             
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-dark my-4" style="border: none;">LogIn</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

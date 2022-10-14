@@ -1,0 +1,77 @@
+
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 100px; background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(52,51,49,1) 32%, rgba(177,178,178,1) 76%, rgba(244,246,252,1) 96%); background-position: center top;">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="media align-items-center">
+        <div class="media-body">
+       
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0" style="background-color: white;">
+          <div class="row align-items-center" style="text-align: center;">
+            <div class="col-10"> 
+              <div class="row">
+                <div class="col-lg-8">
+                  <input class="form-control" placeholder="Chercher un client" type="text" [(ngModel)]="searchedKeyword">
+                </div>
+                <div class="col-lg-4">
+                  <p style="text-align: right;">
+                    <a class="btn btn-primary" [routerLink]="['/addperson/']" style="background-color: #2c3e50;border: none;">Nouveau client</a>
+                  </p> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-header border-0">  
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr class="color">
+                  <th scope="col" style="color: #2c3e50;">Name</th>
+                  <th scope="col" style="color: #2c3e50;">Email</th>
+                  <th scope="col" style="color: #2c3e50;">Phone</th>
+                  <th scope="col" style="color: #2c3e50;">CIN</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let person of persons | filter:searchedKeyword">
+                    <td>{{ person.name }}</td>
+                    <td>{{ person.email }}</td>
+                    <td>{{ person.phone }}</td>
+                    <td>{{ person.cin }}</td>
+                <td>
+                  <button class="btn btn-success" type="submit" style="background-color:#f6f9fc;border: none;" (click)="addorder(person.id)" ngbPopover="order" >
+                    <span class="btn-inner--icon"><i class="fas fa-cart-plus" style="color: #2c3e50 ;"></i></span>
+                  </button>
+                  <button class="btn btn-success" type="submit" style="background-color:#f6f9fc;border: none;" (click)="editclient(person.id)" ngbPopover="Modifier" >
+                    <span class="btn-inner--icon"><i class="fas fa-edit" style="color: #2c3e50 ;"></i></span>
+                  </button>
+                  <button class="btn btn-success" type="submit" style="background-color:#f6f9fc;border: none;" (click)="deletePerson(person.id)" ngbPopover="Supprimer">
+                    <span class="btn-inner--icon"><i class="fas fa-user-times" style="color: #2c3e50  ;"></i></span>
+                  </button>
+                </td>    
+                </tr> 
+              </tbody>
+            </table>
+            <br>
+            <hr>
+            
+<p style="text-align: right; margin-right: 2%;">
+  <button class="btn btn-success" type="submit" style="background-color:#f6f9fc;color: #2c3e50 ;border: none;" (click)=" open(content)" *ngIf="affichage">totale</button>
+  </p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>

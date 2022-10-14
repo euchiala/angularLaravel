@@ -1,0 +1,110 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 100px; background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(52,51,49,1) 32%, rgba(177,178,178,1) 76%, rgba(244,246,252,1) 96%); background-position: center top;">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="media align-items-center">
+        <div class="media-body">
+       
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0" style="color: black;">
+          <div class="row align-items-center" style="text-align: left;">
+            <div class="col-8">
+              <h3 class="mb-0">Formulaire d'un nouveau produit</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-body" style="background-color: #f7f7f7;">
+          <form [formGroup]="form" (ngSubmit)="submit()"> 
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Nom du produit</label>
+                      <input type="text" id="productname" name="productname" class="form-control form-control-alternative" placeholder="Nom du produit" formControlName="productname">
+                      <div *ngIf="form.controls['productname'].invalid && (form.controls['productname'].dirty || form.controls['productname'].touched)" class="alert">
+                        <div *ngIf="form.controls['productname'].errors.required" >
+                            <i class="ni ni-fat-remove text-red"></i>
+                            <span style="color:red;">Veuillez insérer le nom du produit</span>
+                      </div>
+                    </div>  
+                    </div>
+                </div> 
+                <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-last-name">Description</label>
+                      <input type="type" id="description" name="description" class="form-control form-control-alternative" placeholder="Description" formControlName="description">
+                      <div *ngIf="form.controls['description'].invalid && (form.controls['description'].dirty || form.controls['description'].touched)" class="alert">
+                        <div *ngIf="form.controls['description'].errors.required" >
+                            <i class="ni ni-fat-remove text-red"></i>
+                            <span style="color:red;">Veuillez insérer la description du produit </span>
+                      </div>
+                    </div>  
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-last-name">Catégorie</label>
+                    <input type="text" id="category" name="category" class="form-control form-control-alternative" placeholder="Catégorie" formControlName="category" >
+                    <div *ngIf="form.controls['category'].invalid && (form.controls['category'].dirty || form.controls['category'].touched)" class="alert">
+                      <div *ngIf="form.controls['category'].errors.required" >
+                          <i class="ni ni-fat-remove text-red"></i>
+                          <span style="color:red;">Veuillez insérer la catégorie du produit</span>
+                    </div>
+                  </div>  
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-last-name">Quantité</label>
+                      <input type="text" id="quantite" name="quantite" class="form-control form-control-alternative" placeholder="Quantité" formControlName="quantite" >
+                      <div *ngIf="form.controls['quantite'].invalid && (form.controls['quantite'].dirty || form.controls['quantite'].touched)" class="alert">
+                        <div *ngIf="form.controls['quantite'].errors.required" >
+                            <i class="ni ni-fat-remove text-red"></i>
+                            <span style="color:red;">Veuillez insérer la quantité du produit</span>
+                      </div>
+                    </div>  
+                    </div>
+                  </div>
+              </div>  
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-last-name">Prix unitaire</label>
+                    <input type="text" id="punitaire" name="punitaire" class="form-control form-control-alternative" placeholder="Prix unitaire" formControlName="punitaire" >
+                    <div *ngIf="form.controls['punitaire'].invalid && (form.controls['punitaire'].dirty || form.controls['punitaire'].touched)" class="alert">
+                      <div *ngIf="form.controls['punitaire'].errors.required" >
+                          <i class="ni ni-fat-remove text-red"></i>
+                          <span style="color:red;">Veuillez insérer le prix unitaire du produit</span>
+                    </div>
+                  </div>  
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                <p style="text-align: right;margin-left: 400px;">
+                    <button class="btn btn-primary" type="submit" [disabled]="!form.valid" style="background-color: #2c3e50;border: none;">Sauvegarder</button>
+                  </p> 
+                </div>  
+            </div>
+              </div>              
+                  
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+ 
